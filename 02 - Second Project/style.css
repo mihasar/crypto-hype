@@ -1,0 +1,1181 @@
+/* Parallax-scrolling image and design */
+.parallax-scrolling {
+    background-image: url("assets/images/cryptoImage10.jfif");
+    min-height: 140px;
+    background-size: 100%;
+    background-attachment: fixed;
+    border: 2px solid black;
+    margin-top: -39px;
+}
+
+/* Header */
+.box {
+    padding-top: 30px;
+    font-family: h1Font;
+    color: #fff;
+    font-size: 50px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-shadow: 0 0 10px #00b3ff,
+        0 0 20px #00b3ff,
+        0 0 40px #00b3ff,
+        0 0 80px #00b3ff,
+        0 0 120px #00b3ff;
+}
+
+/* Header Image */
+.box>img {
+    width: 60px;
+    padding-bottom: 40px;
+}
+
+/* 3 fonts used in the project */
+@font-face {
+    font-family: cryptoFont;
+    src: url("assets/fonts/Coco-Gothic-Bold-Italic-trial.ttf");
+}
+
+@font-face {
+    font-family: h1Font;
+    src: url("assets/fonts/AgrozzaDemoRegular.ttf");
+}
+
+@font-face {
+    font-family: cryptoCardFont;
+    src: url("assets/fonts/Fonarto.ttf");
+}
+
+/* Remove scrollBar */
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Navbar Options: Currencies and About */
+.navbar-brand,
+.nav-link {
+    color: azure;
+    opacity: .7;
+    font-size: 29px;
+    margin: 3px;
+    font-family: cryptoFont;
+}
+
+.nav-item {
+    font-family: cryptoFont;
+    padding: 10px;
+    margin: auto;
+    transition: .5s;
+    margin-left: 10px;
+}
+
+.nav-link:hover,
+.navbar-brand:hover {
+    border: 3px solid #104F55;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    background-color: rgba(365, 365, 365, 0.5);
+    cursor: pointer;
+    color: #104F55;
+    opacity: .8;
+    transition: .5s;
+    padding: 7px;
+    transform: translate(10px);
+    z-index: 1;
+    position: relative;
+}
+
+.navbar-toggler {
+    background-color: azure;
+}
+
+#searchOption {
+    background: transparent;
+    color: white;
+    opacity: .8;
+}
+
+/* Select up to 5 coins header */
+h3 {
+    font-family: cryptoFont;
+    color: rgb(195, 227, 224);
+    opacity: .85;
+    padding-top: 50px;
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+}
+
+/* Loader(spinner) */
+.loader {
+    display: inline-block;
+    transform: translateZ(1px);
+    margin-top: 40px;
+}
+
+.loader:after {
+    content: '';
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    margin: 8px;
+    border-radius: 50%;
+    background-image: url("assets/images/crypto-coin-loader.jpg");
+    background-size: 100% 100%;
+    animation: coin-flip 5s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+@keyframes coin-flip {
+
+    0%,
+    100% {
+        animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+    }
+
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    50% {
+        transform: rotateY(1800deg);
+        animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+    }
+
+    100% {
+        transform: rotateY(3600deg);
+    }
+}
+
+/* Search Incorrect coin symbol name */
+#errorMsg {
+    width: 150%;
+    border: 2px solid black;
+    border-radius: 20px;
+    box-shadow: 10px 5px 15px black;
+    opacity: .8;
+}
+
+/* Coming Soon Message in Reports */
+#comingSoonMsg {
+    border: 2px solid black;
+    border-radius: 20px;
+    box-shadow: 4px 5px 40px 2px darkturquoise;
+}
+
+/* Currency Cards */
+#contentDiv {
+    display: inline-flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    height: 100%;
+}
+
+/* Currency Card + "more info button" button in the card design*/
+.card {
+    width: 220px;
+    height: 250px;
+    border: 3px solid rgb(45, 44, 44);
+    margin: 10px;
+    padding-left: 10px;
+    border-radius: 40px;
+    box-shadow: 8px 8px 10px darkcyan;
+    background-image: url("assets/images/cryptoImage9.webp");
+    font-family: cryptoCardFont;
+    font-size: 17px;
+    color: rgb(195, 223, 223);
+    text-shadow: 0 0 10px #00b3ff,
+        0 0 20px #00b3ff,
+        0 0 40px #00b3ff,
+        0 0 80px #00b3ff,
+        0 0 120px #00b3ff;
+}
+
+#moreInfoBtn {
+    background: transparent;
+    margin: 10px;
+    margin-top: 5px;
+    border: 0px solid black;
+    color: rgb(195, 223, 223);
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, .5);
+    overflow: hidden;
+}
+
+#moreInfoBtn span {
+    position: absolute;
+    display: block;
+    background: #104F55;
+}
+
+#moreInfoBtn span:nth-child(1) {
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    transform: translateY(0);
+}
+
+#moreInfoBtn:hover span:nth-child(1) {
+    transition: 0.5s;
+    transform: translateY(-100%);
+}
+
+#moreInfoBtn span:nth-child(2) {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    transform: translateX(-100%);
+}
+
+#moreInfoBtn:hover span:nth-child(2) {
+    transform: translateX(100%);
+    transition: 0.75s;
+    transition-delay: 0.25s;
+}
+
+#moreInfoBtn span:nth-child(3) {
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    transform: translateY(-100%);
+}
+
+#moreInfoBtn:hover span:nth-child(3) {
+    transition: 0.5s;
+    transition-delay: 0.5s;
+    transform: translateY(0);
+}
+
+#moreInfoBtn span:nth-child(4) {
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    transform: translateY(0);
+}
+
+#moreInfoBtn:hover span:nth-child(4) {
+    transition: 0.5s;
+    transform: translateY(100%);
+}
+
+#moreInfoBtn span:nth-child(5) {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    transform: translateX(100%);
+}
+
+#moreInfoBtn:hover span:nth-child(5) {
+    transform: translateX(-100%);
+    transition: 0.75s;
+    transition-delay: 0.25s;
+}
+
+#moreInfoBtn span:nth-child(6) {
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    transform: translateY(100%);
+}
+
+#moreInfoBtn:hover span:nth-child(6) {
+    transition: 0.5s;
+    transition-delay: 0.5s;
+    transform: translateY(0);
+}
+
+/* toggle */
+.toggle input {
+    display: none;
+}
+
+.toggle {
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    margin: 4px;
+    margin-left: 10px;
+    transform: translateY(50%);
+    position: relative;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 30px;
+    box-shadow: 0 0 0 2px #777, 0 0 4px #777;
+    background-color: lightgray;
+    cursor: pointer;
+    border: 4px solid transparent;
+    overflow: hidden;
+    transition: 0.2s;
+    padding-bottom: 25px;
+}
+
+.slider:before {
+    content: "";
+    color: #000;
+    transform: translateX(-30px);
+    transition: 0.2s;
+}
+
+input:checked+.slider:before {
+    transform: translateX(30px);
+    background-color: limegreen;
+    content: "";
+}
+
+input:checked+.slider {
+    box-shadow: 0 0 0 2px mediumspringgreen, 0 0 8px black;
+    background-color: limegreen;
+}
+
+/* Mobile */
+@media only screen and (max-width: 800px) {
+
+    /* Header */
+    .box {
+        font-size: 35px;
+    }
+
+    /* Header Image */
+    .box>img {
+        width: 35px;
+        padding-bottom: 20px;
+    }
+
+    /* Loader(spinner) */
+    .loader {
+        margin-top: 40px;
+        margin-left: 70px;
+    }
+
+    /* Crypto Card */
+    #contentDiv {
+        margin-left: 70px;
+    }
+
+    /* Crypto Cards Header */
+    h3 {
+        font-size: 23px;
+    }
+
+    /* Search Incorrect coin symbol name */
+    #errorMsg {
+        width: 100%;
+    }
+
+    /* Coming Soon Message in Reports */
+    #comingSoonMsg {
+        width: 75%;
+        border: 2px solid black;
+        border-radius: 20px;
+        box-shadow: 4px 5px 40px 2px darkturquoise;
+    }
+}
+
+/* Modal Div */
+#modalDiv {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100px;
+    width: 230px;
+}
+
+#modalDiv .card {
+    background: transparent;
+    border: 0;
+    box-shadow: 0 0 0 0;
+}
+
+#modalBody {
+    width: 100%;
+    background-image: url("assets/images/cryptoImage10.jfif");
+    color: white;
+}
+
+.card-title {
+    padding-top: 5px;
+}
+
+#chosenToggle {
+    margin-left: 45px;
+    padding-left: 35px;
+    padding-right: 35px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 4px 5px 40px 2px darkgreen;
+}
+
+#chosenToggle:hover {
+    margin-top: 16px;
+    background: transparent;
+    border-radius: 15px;
+    transition: 0.25s;
+}
+
+#myModal {
+    opacity: .9;
+    background-color: #000;
+    font-family: cryptoCardFont;
+}
+
+#modalDiv input {
+    display: none;
+}
+
+/* Modal Div - Mobile */
+@media only Screen and (max-width:600px) {
+
+    .modal-title {
+        padding-left: 25px;
+    }
+
+    #modalDiv {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100px;
+        padding-right: 1px;
+        width: 180px;
+        margin-right: 30px;
+    }
+
+    #modalBody {
+        width: 372px;
+        background-image: url("assets/images/cryptoImage10.jfif");
+        color: white;
+    }
+
+    #modalCard {
+        padding-top: 7px;
+        border-radius: 30px;
+    }
+
+    #modalCard:hover {
+        padding-bottom: 3px;
+        color: darkcyan;
+        border-radius: 25px;
+        transition: 0.25s;
+    }
+
+    #chosenToggle {
+        margin-left: 0px;
+        padding-left: 55px;
+        padding-right: 55px;
+        border-radius: 10px;
+        background-color: #4CBB17;
+        box-shadow: 4px 5px 40px 2px darkgreen;
+    }
+
+    #myModal {
+        opacity: .9;
+        background-color: #000;
+        font-family: cryptoCardFont;
+    }
+
+    #modalDiv input {
+        display: none;
+    }
+
+    .modal-footer {
+        padding-right: 20px;
+    }
+
+    #keepCurrent {
+        margin-right: 20px;
+    }
+}
+
+/* Keep Current Btn */
+#keepCurrent {
+    position: relative;
+    color: darkcyan;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 13px;
+    overflow: hidden;
+    transition: 0.5s;
+    -webkit-box-reflect: below 1px linear-gradient(transparent);
+}
+
+#keepCurrent:hover {
+    background: darkcyan;
+    color: #111;
+    box-shadow: 0 0 50px darkcyan;
+    transition-delay: 0.5s;
+    transition: 0.5s;
+}
+
+#keepCurrent:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid darkcyan;
+    border-left: 2px solid darkcyan;
+    transition: 0.5s;
+    transition-delay: 0s;
+}
+
+#keepCurrent:hover:before {
+    width: 100%;
+    height: 100%;
+}
+
+#keepCurrent:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    border-bottom: 2px solid darkcyan;
+    border-right: 2px solid darkcyan;
+    transition: 0.5s;
+    transition-delay: 0s;
+}
+
+#keepCurrent:hover:after {
+    width: 100%;
+    height: 100%;
+}
+
+/* Modal toggle */
+.toggle input {
+    display: none;
+}
+
+.toggle {
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    margin: 4px;
+    margin-left: 10px;
+    transform: translateY(50%);
+    position: relative;
+}
+
+.modalSlider {
+    position: absolute;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-top: 10px;
+    margin-left: 15px;
+    left: 0;
+    top: 0;
+    border-radius: 30px;
+    box-shadow: 0 0 0 2px #777, 0 0 4px #777;
+    cursor: pointer;
+    border: 4px solid transparent;
+    overflow: hidden;
+    transition: 0.2s;
+
+}
+
+.modalSlider:before {
+    content: "";
+    background-color: black;
+    transform: translateX(-30px);
+    transition: 0.2s;
+}
+
+input:checked+.modalSlider:before {
+    transform: translateX(30px);
+    background-color: limegreen;
+}
+
+input:checked+.modalSlider {
+    box-shadow: 0 0 0 2px mediumspringgreen, 0 0 8px black;
+    background-color: limegreen;
+
+}
+
+/* About Card: picture,text and links to profile. */
+#aboutCard {
+    position: relative;
+    margin-left: 50px;
+    width: 270px;
+    height: 370px;
+    background: #fff;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    box-shadow: 10px 20px 40px rgba(0, 0, 0, 0.25);
+    transition: 1s;
+    font-family: cryptoCardFont;
+}
+
+#aboutCard:hover {
+    transform: translateX(50%);
+}
+
+#aboutCard .imgBox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    background: #000;
+    transition: 1s;
+    box-shadow: 10px 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+#aboutCard:hover .imgBox {
+    transform: rotateY(-180deg);
+}
+
+#aboutCard .imgBox img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+#aboutCard .imgBox img:nth-child(2) {
+    transform: rotateY(180deg);
+}
+
+#aboutCard .details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#aboutCard .details .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#aboutCard .details .content h2 {
+    text-align: center;
+    font-weight: 700;
+    line-height: 1em;
+    padding-top: 10px;
+}
+
+#aboutCard span {
+    text-align: left;
+    font-size: 20px;
+    padding-top: 10px;
+}
+
+#aboutCard .details .content .social-icons {
+    position: relative;
+    display: flex;
+}
+
+#aboutCard .details .content .social-icons a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background: #333;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    margin: 8px;
+    font-size: 18px;
+    transition: 0.2s;
+}
+
+/* About Icons hover Style and Design */
+#aboutCard .details .content .social-icons a:hover:nth-of-type(1) {
+    border-radius: 15px;
+    background-color: #e1306c;
+}
+
+#aboutCard .details .content .social-icons a:hover:nth-of-type(2) {
+    border-radius: 15px;
+    background-color: #303ce1;
+}
+
+#aboutCard .details .content .social-icons a:hover:nth-of-type(3) {
+    border-radius: 15px;
+    background-color: #30b2e1;
+}
+
+/* Icon Hover Pop-Up */
+.social-icons a .tooltip {
+    position: absolute;
+    top: 0px;
+    background: #fff;
+    font-size: 15px;
+    padding: 10px 15px;
+    border-radius: 25px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.social-icons a:hover .tooltip {
+    top: -70px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.social-icons a .tooltip:before {
+    position: absolute;
+    content: "";
+    height: 15px;
+    width: 15px;
+    background: #fff;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.social-icons a:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.4);
+}
+
+.social-icons a:nth-of-type(1):hover .tooltip,
+.social-icons a:nth-of-type(1):hover .tooltip:before {
+    background: #e1306c;
+}
+
+.social-icons a:nth-of-type(2):hover .tooltip,
+.social-icons a:nth-of-type(2):hover .tooltip:before {
+    background: #303ce1;
+}
+
+.social-icons a:nth-of-type(3):hover .tooltip,
+.social-icons a:nth-of-type(3):hover .tooltip:before {
+    background: #30b2e1;
+}
+
+/* project Description Card: picture,text and links to profile. */
+#projectDescription {
+    margin-left: 180px;
+    position: relative;
+    width: 270px;
+    height: 370px;
+    background: #fff;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    box-shadow: 10px 20px 40px rgba(0, 0, 0, 0.25);
+    transition: 1s;
+    font-family: cryptoCardFont;
+}
+
+#projectDescription:hover {
+    transform: translateX(50%);
+}
+
+#projectDescription .imgBox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    background: #000;
+    transition: 1s;
+    box-shadow: 10px 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+#projectDescription:hover .imgBox {
+    transform: rotateY(-180deg);
+}
+
+#projectDescription .imgBox img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+#projectDescription .imgBox img:nth-child(2) {
+    transform: rotateY(180deg);
+}
+
+#projectDescription .details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#projectDescription .details .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#projectDescription .details .content h2 {
+    text-align: center;
+    font-weight: 700;
+    line-height: 1em;
+    padding-bottom: 5px;
+    font-size: 25px;
+}
+
+#projectDescription .details .content span {
+    color: #333;
+    font-size: 13.5px;
+}
+
+#projectDescription span {
+    text-align: left;
+    padding-top: 25px;
+}
+
+/* mobile adjusting max-width 1000px */
+@media only screen and (max-width: 1000px) and (min-width: 500px) {
+
+    /* About Card: picture,text and links to profile. (1000px) */
+    #aboutCard {
+        margin-left: 200px;
+        position: relative;
+        width: 350px;
+        height: 450px;
+        background: #fff;
+        transform-style: preserve-3d;
+        transform: perspective(1000px);
+        box-shadow: 10px 20px 40px rgba(0, 0, 0, 0.25);
+        transition: 1s;
+        font-family: cryptoCardFont;
+    }
+
+    #aboutCard .imgBox {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        transform-origin: left;
+        transform-style: preserve-3d;
+        background: #000;
+        transition: 1s;
+        box-shadow: 10px 20px 40px rgba(0, 0, 0, 0.25);
+    }
+
+    #aboutCard .imgBox img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform-style: preserve-3d;
+        backface-visibility: hidden;
+    }
+
+    #aboutCard .details {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #aboutCard span {
+        text-align: left;
+        font-size: 25px;
+        padding-top: 10px;
+    }
+
+    #aboutCard .details .content .social-icons {
+        position: relative;
+        display: flex;
+        padding: 10px;
+    }
+
+    #aboutCard .details .content .social-icons a {
+        display: inline-block;
+        width: 45px;
+        height: 45px;
+        background: #333;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        margin: 8px;
+        font-size: 20px;
+        transition: 0.2s;
+    }
+
+    /* Icon Hover Pop-Up */
+    .social-icons a .tooltip {
+        position: absolute;
+        top: 0px;
+        background: #fff;
+        font-size: 15px;
+        padding: 10px 15px;
+        border-radius: 25px;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .social-icons a:hover .tooltip {
+        top: -70px;
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .social-icons a .tooltip:before {
+        position: absolute;
+        content: "";
+        height: 15px;
+        width: 15px;
+        background: #fff;
+        bottom: -8px;
+        left: 50%;
+        transform: translateX(-50%) rotate(45deg);
+    }
+
+    /* project Description Card: picture,text and links to profile. (1000px)*/
+    #projectDescription {
+        margin-top: 80px;
+        margin-left: 200px;
+        position: relative;
+        width: 350px;
+        height: 450px;
+        background: #fff;
+        transform-style: preserve-3d;
+        transform: perspective(1000px);
+        box-shadow: 10px 20px 40px rgba(0, 0, 0, 0.25);
+        transition: 1s;
+        font-family: cryptoCardFont;
+    }
+
+    #projectDescription .imgBox {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        transform-origin: left;
+        transform-style: preserve-3d;
+        background: #000;
+        transition: 1s;
+        box-shadow: 10px 20px 40px rgba(0, 0, 0, 0.25);
+    }
+
+    #projectDescription .imgBox img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform-style: preserve-3d;
+        backface-visibility: hidden;
+    }
+
+    #projectDescription .details {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 0.4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #projectDescription .details .content h2 {
+        text-align: center;
+        font-weight: 700;
+        line-height: 1em;
+        font-size: 25px;
+        padding-top: 2px;
+    }
+
+    #projectDescription .details .content span {
+        color: #333;
+        font-size: 18px;
+        text-align: left;
+    }
+}
+
+/* mobile adjusting max-width 500px */
+@media only screen and (max-width: 500px) {
+
+    /* About Card: picture,text and links to profile. (500px) */
+    #aboutCard {
+        position: relative;
+        margin-left: 50px;
+        width: 160px;
+        height: 220px;
+        background: #fff;
+        transform-style: preserve-3d;
+        transform: perspective(1000px);
+        box-shadow: 10px 20px 40px rgba(0, 0, 0, 0.25);
+        transition: 1s;
+        font-family: cryptoCardFont;
+    }
+
+    #aboutCard .imgBox {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        transform-origin: left;
+        transform-style: preserve-3d;
+        background: #000;
+        transition: 1s;
+        box-shadow: 10px 20px 40px rgba(0, 0, 0, 0.25);
+    }
+
+    #aboutCard .details .content h2 {
+        text-align: center;
+        font-weight: 700;
+        line-height: 1em;
+        font-size: 14px;
+        padding-top: 25px;
+    }
+
+    #aboutCard span {
+        text-align: left;
+        font-size: 11.5px;
+    }
+
+    #aboutCard .details .content .social-icons {
+        position: relative;
+        display: flex;
+        padding: 10px;
+    }
+
+    #aboutCard .details .content .social-icons a {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background: #104F55;
+        padding: 10px;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        margin: 8px;
+        font-size: 10px;
+        transition: 0.2s;
+    }
+
+    /* Icon Hover Pop-Up */
+    .social-icons a .tooltip {
+        position: absolute;
+        top: 0px;
+        background: #fff;
+        font-size: 12px;
+        padding: 7px 12px;
+        border-radius: 25px;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .social-icons a:hover .tooltip {
+        top: -70px;
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .social-icons a .tooltip:before {
+        position: absolute;
+        content: "";
+        height: 15px;
+        width: 15px;
+        background: #fff;
+        bottom: -8px;
+        left: 50%;
+        transform: translateX(-50%) rotate(45deg);
+    }
+
+    /* project Description Card: picture,text and links to profile. (500px) */
+    #projectDescription {
+        position: relative;
+        margin-top: 40px;
+        margin-left: 50px;
+        width: 160px;
+        height: 220px;
+        background: #fff;
+        transform-style: preserve-3d;
+        transform: perspective(1000px);
+        box-shadow: 10px 20px 40px rgba(0, 0, 0, 0.25);
+        transition: 1s;
+        font-family: cryptoCardFont;
+    }
+
+    #projectDescription .imgBox {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        transform-origin: left;
+        transform-style: preserve-3d;
+        background: #000;
+        transition: 1s;
+        box-shadow: 10px 20px 40px rgba(0, 0, 0, 0.25);
+    }
+
+    #projectDescription .details {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 0.4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #projectDescription .details .content h2 {
+        text-align: center;
+        font-weight: 700;
+        line-height: 1em;
+        font-size: 13px;
+    }
+
+    #projectDescription .details .content span {
+        color: #333;
+        font-size: 8px;
+        text-align: left;
+    }
+}
